@@ -4,9 +4,13 @@
   "description": "",
   "type": "module",
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon -r dotenv/config src/index.js"
-  },
+"scripts": {
+  "dev": "CHOKIDAR_USEPOLLING=true nodemon --legacy-watch -r dotenv/config src/index.js"
+},
+"nodemonConfig": {
+  "watch": ["src"],
+  "ext": "js,json,mjs"
+},
   "keywords": [
     "javascript",
     "backend",
